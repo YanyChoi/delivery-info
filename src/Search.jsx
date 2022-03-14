@@ -8,12 +8,18 @@ function Search() {
     let [address, setAddress] = useState("");
     let addressList = [];
 
-    function submitCheck(e) {
-        e.preventDefault();
+    const submitCheck = (e) => {
+        console.log(e.target[0].value);
         setAddress(e.target[0].value);
-        address_search();
+        e.preventDefault();
     }
 
+
+
+    useEffect(() => {
+        console.log(address);
+        address_search();
+    }, [address]);
     
 
     function address_search() {
