@@ -5,11 +5,16 @@ import Address from "./Address";
 import Map from "./Map";
 
 function ListBox() {
+
+    function openMap(event) {
+        console.log(event);
+    }
+
     return (
-        <div className="listbox">
+        <div className="listbox" onClick={(event)=>{openMap(event)}}>
             <Address />
             <Map />
-            
+
         </div>
     );
 }

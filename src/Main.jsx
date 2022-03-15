@@ -4,6 +4,7 @@ import List from "./components/List";
 import "./css/Main.css";
 
 function Main() {
+
     return (
         <div className="main">
             <Search />
