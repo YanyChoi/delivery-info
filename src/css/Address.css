@@ -1,0 +1,20 @@
+.address {
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 75%;
+    height: 85px;
+}
+
+.textbox {
+    margin-bottom: 10px;
+}
+
+#road_address {
+    font-size: 11pt;
+}
+
+#building_name {
+    padding-bottom: 5px;
+    font-size: 10pt;
+}
