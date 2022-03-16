@@ -17,7 +17,7 @@ function ListBox() {
 
     function selectAddress(event) {
         event.stopPropagation();
-        
+
     }
 
     return (

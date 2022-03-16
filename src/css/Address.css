@@ -1,5 +1,6 @@
 .address {
-    display: inline-block;
+    display: block;
+    float: left;
     padding-top: 10px;
     padding-bottom: 10px;
     width: 80%;
@@ -7,6 +8,7 @@
 }
 
 .textbox {
+    display: block;
     margin-bottom: 10px;
 }
 

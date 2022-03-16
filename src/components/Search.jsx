@@ -27,7 +27,6 @@ function Search() {
     useEffect(() => {
         if (addressList !== ''){
             printList();
-            setAddresses();
         }
     }, [addressList]);
 
@@ -44,10 +43,6 @@ function Search() {
             })
     }
 
-    function setAddresses() {
-
-    }
-
     function printList() {
         if (addressList !== undefined) {
             console.log(addressList);
@@ -62,7 +57,7 @@ function Search() {
         <div className="search">
             <form onSubmit={(event)=>{submitCheck(event)}}>
                 <input type="text" id="textbox" required></input>
-                <button className="submit_button" type="submit"></button>
+                <button className="submit_button" type="submit">검색</button>
             </form>
         </div>
     );
