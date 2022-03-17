@@ -1,36 +1,31 @@
 import { createAction, handleActions } from 'redux-actions';
 import produce from 'immer';
 
+//액션 정의
 const INSERT = 'addressList/INSERT';
 const REMOVE = 'addressList/REMOVE';
 const WIPE = 'addressList/WIPE';
 let id = 1;
 
+//create actions
 export const insert = createAction(INSERT, newAddress => ({
     id: id++,
-    address: newAddress.road_address.address_name,
-    buildingName: newAddress.road_address.building_name,
+    address: newAddress.address_name,
+    buildingName: newAddress.road_address !== null ? newAddress.road_address.building_name : "",
     coordX: newAddress.x,
     coordY: newAddress.y
-}))
+}));
+export const remove = createAction(REMOVE, id => id);
+export const wipe = createAction(WIPE, action => action);
 
-export const remove = createAction(REMOVE, id => id)
-export const wipe = createAction(WIPE, action => action)
-
-
+//initial state
 const initialState = {
     addressList: [
-        {
-            id: 1,
-            address: "주소지 없음",
-            buildingName: "",
-            coordX: 0,
-            coordY: 0
-        }
     ]
 
 }
 
+//set reducers
 const addressList = handleActions(
     {
         [INSERT]: (state, {payload: newAddress}) => 
@@ -44,7 +39,7 @@ const addressList = handleActions(
         }),
         [WIPE]: (state, action) =>
         produce(state, list => {
-            list = initialState;
+            list.addressList = [];
         })
     },
     initialState

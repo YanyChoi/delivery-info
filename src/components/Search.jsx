@@ -1,38 +1,35 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import ReactDOM from "react-dom";
+import { useDispatch } from "react-redux";
+import { initial } from "../Reducers/Count";
 import '../css/Search.css';
 
-function Search() {
-
-    const newAddressList = useSelector( (state) => state);
+function Search({ onInsert, onWipe, count }) {
 
     const KAKAO_API_KEY = 'de874839e8c063dde99ce3682fa7685c';
-    let [address, setAddress] = useState("");
-    let [addressList, setAddressList] = useState("");
-    let searchAddress = '';
+    const [address, setAddress] = useState("");
+    const [addressList, setAddressList] = useState("");
     
+    const dispatch = useDispatch();
+    const onInitial = () => dispatch(initial());
 
+
+    //입력받을때
     const submitCheck = (e) => {
         e.preventDefault();
-        searchAddress = e.target[0].value;
-        setAddress (e.target[0].value);
+        onInitial();
+        setAddress(e.target[0].value);
     }
 
+    //address 바뀌고 API로 넘김
     useEffect(() => {
+        onWipe();
         if (address !== '')
             address_search();
-    },[address]);
+    }, [address, count]);
 
-    useEffect(() => {
-        if (addressList !== ''){
-            printList();
-        }
-    }, [addressList]);
-
-
+    //API fetch
     function address_search() {
-        fetch(`https://dapi.kakao.com/v2/local/search/address.json?query=${address}`, {
+        fetch(`https://dapi.kakao.com/v2/local/search/address.json?query=${address}&size=${count*10 <= 30 ? count*10 : 30}`, {
             headers: {
                 Authorization: `KakaoAK ${KAKAO_API_KEY}`
             }
@@ -43,19 +40,25 @@ function Search() {
             })
     }
 
-    function printList() {
-        if (addressList !== undefined) {
-            console.log(addressList);
-            return (
-              <li>{addressList}</li>
-            );
-        }
 
+    //API에서 데이터가 넘어오면 출력
+    useEffect(() => {
+        if (addressList !== '') {
+            sendAddress();
+        }
+    }, [addressList]);
+
+    //store로 데이터 저장
+    function sendAddress() {
+        for (let i = 0; i < addressList.length; i++) {
+            onInsert(addressList[i]);
+        }
     }
-   
+
+
     return (
         <div className="search">
-            <form onSubmit={(event)=>{submitCheck(event)}}>
+            <form onSubmit={(event) => { submitCheck(event) }}>
                 <input type="text" id="textbox" required></input>
                 <button className="submit_button" type="submit">검색</button>
             </form>

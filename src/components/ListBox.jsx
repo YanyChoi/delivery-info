@@ -1,10 +1,11 @@
 //the box which holds address.jsx and map.jsx inside list.jsx
-import React from "react";
+import React, { useEffect } from "react";
 import "../css/ListBox.css";
 import Address from "./Address";
 import Map from "./Map";
 
-function ListBox() {
+
+function ListBox({ address, onRemove, onWipe}) {
 
     function openMap(event) {
         if (event.currentTarget.style.height !== "400px"){
@@ -20,11 +21,13 @@ function ListBox() {
 
     }
 
+    
+    
     return (
         <div className="listbox" onClick={(event)=>{openMap(event)}}>
-            <Address />
+            <Address roadAddress={address.address} buildingName={address.buildingName}/>
             <button id="select" onClick={(event)=>{selectAddress(event)}}>선택</button>
-            <Map />
+            <Map x={address.coordX} y={address.coordY}/>
 
         </div>
     );
