@@ -2,33 +2,26 @@
 import React, { useEffect } from "react";
 import "../css/ListBox.css";
 import Address from "./Address";
-import Map from "./Map";
+import { set } from "../Reducers/Location";
+import { useDispatch } from "react-redux";
 
 
-function ListBox({ address, onRemove, onWipe}) {
+function ListBox({ address, onRemove, onWipe, index}) {
 
-    function openMap(event) {
-        if (event.currentTarget.style.height !== "400px"){
-            event.currentTarget.style.height = "400px";
-        }
-        else {
-            event.currentTarget.style.height = "100px";
-        }
-    }
+    const dispatch = useDispatch();
+    const onLocation = address => dispatch(set(address));
 
     function selectAddress(event) {
         event.stopPropagation();
-
+        onLocation(address);
     }
 
     
     
     return (
-        <div className="listbox" onClick={(event)=>{openMap(event)}}>
+        <div className="listbox">
             <Address roadAddress={address.address} buildingName={address.buildingName}/>
             <button id="select" onClick={(event)=>{selectAddress(event)}}>선택</button>
-            <Map x={address.coordX} y={address.coordY}/>
-
         </div>
     );
 }

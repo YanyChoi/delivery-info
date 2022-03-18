@@ -6,10 +6,12 @@ import ListContainer from './ListContainer';
 import { useSelector, useDispatch } from "react-redux";
 import { useInView } from "react-intersection-observer";
 import { add, subtract } from "../Reducers/Count";
+import Map from "./Map";
 
 
 function List() {
 
+    const addressList = useSelector(state => state.addressList.addressList);
     const count = useSelector(state=>state.count.count);
     const dispatch = useDispatch();    
     const onAdd = () => dispatch(add());
@@ -24,7 +26,7 @@ function List() {
     return (
         <div className="list">
             <ListContainer />
-            <div ref={ref} style={{marginTop: "400px"}}></div>
+            <div ref={ref}></div>
         </div>
     );
 }

@@ -1,44 +1,41 @@
 //connects to naver map api and sends location of selected element in List.jsx
-import React from "react";
-import { RenderAfterNavermapsLoaded, NaverMap, Marker, loadNavermapsScript } from "react-naver-maps";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import "../css/Map.css";
+import location from "../Reducers/Location";
 
-function NaverMapAPI({x, y}) {
+function Map() {
+    const x = useSelector(state => state.location.x);
+    const y = useSelector(state => state.location.y);
+
+    const { kakao } = window;
+    let options = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667),
+        level: 3
+    };
+    let markerPosition = new kakao.maps.LatLng(33.450701, 126.570667);
+    let marker = new kakao.maps.Marker({
+        position: markerPosition
+    });
+
+    useEffect(() => {
+        const container = document.querySelector(".map");
+        if (x !== undefined && y !== undefined) {
+            options = {
+                center: new kakao.maps.LatLng(y, x),
+                level: 3
+            };
+            let markerPosition = new kakao.maps.LatLng(y, x);
+            marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+        }
+        let map = new kakao.maps.Map(container, options);
+        marker.setMap(map);
+    }, [x, y]);
 
     return (
-        <NaverMap
-        mapDivID={'maps-getting-started-uncontrolled'}
-        style={{
-            width: '350px',
-            height: '280px'
-        }}
-        defaultCenter={{lat: {x}, lng: {y}}}
-        defaultZoom={13}
-        >
-            <Marker
-            key={1}
-            position={new loadNavermapsScript.LatLng(x, y)}
-            animation={2}
-            />
-        </NaverMap>
-    );
-}
-
-
-
-function Map({ x, y }) {
-
-    const NAVER_API_ID = 'vjx3cs0ck2';
-
-    return (
-        <div className="map" id="map">
-            <RenderAfterNavermapsLoaded
-            ncpClientId={NAVER_API_ID}
-            error={<p>Maps Load Error</p>}
-            loading={<p>Maps loading...</p>}
-            >
-                <NaverMapAPI x={x} y={y}/>
-            </RenderAfterNavermapsLoaded>
+        <div className="map" style={{ width: "300px", height: "300px", margin: "0 auto" }}>
         </div>
     );
 }

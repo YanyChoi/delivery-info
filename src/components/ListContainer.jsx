@@ -13,7 +13,7 @@ function ListContainer() {
     const onRemove = id => dispatch(remove(id));
     const onWipe = () => dispatch(wipe());
     return addressList.map((address, index) =>
-        <ListBox key={index} address={address} onRemove={onRemove} onWipe={onWipe} />
+        <ListBox key={index} address={address} onRemove={onRemove} onWipe={onWipe} index={index}/>
     )
 }
 export default ListContainer;
