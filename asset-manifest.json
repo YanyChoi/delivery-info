@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "https://yanychoi.github.io/delivery-info/static/css/main.824984a2.css",
-    "main.js": "https://yanychoi.github.io/delivery-info/static/js/main.d0fe5e8a.js",
+    "main.css": "https://yanychoi.github.io/delivery-info/static/css/main.9055b1e2.css",
+    "main.js": "https://yanychoi.github.io/delivery-info/static/js/main.6cedaf59.js",
     "static/js/787.e6ffcb94.chunk.js": "https://yanychoi.github.io/delivery-info/static/js/787.e6ffcb94.chunk.js",
     "index.html": "https://yanychoi.github.io/delivery-info/index.html",
-    "main.824984a2.css.map": "https://yanychoi.github.io/delivery-info/static/css/main.824984a2.css.map",
-    "main.d0fe5e8a.js.map": "https://yanychoi.github.io/delivery-info/static/js/main.d0fe5e8a.js.map",
+    "main.9055b1e2.css.map": "https://yanychoi.github.io/delivery-info/static/css/main.9055b1e2.css.map",
+    "main.6cedaf59.js.map": "https://yanychoi.github.io/delivery-info/static/js/main.6cedaf59.js.map",
     "787.e6ffcb94.chunk.js.map": "https://yanychoi.github.io/delivery-info/static/js/787.e6ffcb94.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.824984a2.css",
-    "static/js/main.d0fe5e8a.js"
+    "static/css/main.9055b1e2.css",
+    "static/js/main.6cedaf59.js"
   ]
 }
