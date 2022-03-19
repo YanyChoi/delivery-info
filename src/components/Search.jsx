@@ -13,14 +13,14 @@ function Search({ onInsert, onWipe, count }) {
     const onInitial = () => dispatch(initial());
 
 
-    //입력받을때
+    //initializing when something is in input
     const submitCheck = (e) => {
         e.preventDefault();
         onInitial();
         setAddress(e.target[0].value);
     }
 
-    //address 바뀌고 API로 넘김
+    //activate API when address is modified
     useEffect(() => {
         onWipe();
         if (address !== '')
@@ -41,14 +41,14 @@ function Search({ onInsert, onWipe, count }) {
     }
 
 
-    //API에서 데이터가 넘어오면 출력
+    //print when fetching works
     useEffect(() => {
         if (addressList !== '') {
             sendAddress();
         }
     }, [addressList]);
 
-    //store로 데이터 저장
+    //store the state
     function sendAddress() {
         for (let i = 0; i < addressList.length; i++) {
             onInsert(addressList[i]);

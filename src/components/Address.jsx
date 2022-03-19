@@ -1,7 +1,7 @@
-//shows a block of address which locates in List.jsx
 import React from "react";
 import "../css/Address.css";
 
+//shows a block of address which locates in List.jsx
 const Address = ({roadAddress, buildingName}) => {
     return (
         <div className="address">

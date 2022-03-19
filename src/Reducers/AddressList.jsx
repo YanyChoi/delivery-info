@@ -1,7 +1,7 @@
 import { createAction, handleActions } from 'redux-actions';
 import produce from 'immer';
 
-//액션 정의
+//define actions
 const INSERT = 'addressList/INSERT';
 const WIPE = 'addressList/WIPE';
 let id = 1;

@@ -4,6 +4,7 @@ import { setDetails } from "../Reducers/TargetAddress";
 import "../css/FullAddress.css";
 import { removeElement } from "../Reducers/TargetAddress";
 
+//shows the currently selected address and it's detail items
 function FullAddress() {
 
     const dispatch = useDispatch();
@@ -23,7 +24,7 @@ function FullAddress() {
     }
 
     useEffect(() => {
-        //동기적으로 데이터 송신, 출력 가능
+        //used for getting the data (the selected address) out
         if (fullAddress.address !== '없음') {
             console.log(fullAddress);
         }

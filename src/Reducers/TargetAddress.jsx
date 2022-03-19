@@ -1,10 +1,12 @@
 import { createAction, handleActions } from "redux-actions";
 import produce from "immer";
 
+//define actions
 const SET_ADDRESS = 'targetAddress/SET_ADDRESS';
 const SET_DETAILS = 'targetAddress/SET_DETAILS';
 const REMOVE_ELEMENT = 'targetAddress/REMOVE_ELEMENT';
 
+//create actions
 export const setAddress = createAction(SET_ADDRESS, newAddress => ({
     address: newAddress.address,
     buildingName: newAddress.buildingName
@@ -18,7 +20,7 @@ export const setDetails = createAction(SET_DETAILS, detail => ({
 export const removeElement = createAction(REMOVE_ELEMENT, element => element);
 
 
-
+//initial state
 const initialState = {
     address: "",
     buildingName: "",
@@ -26,6 +28,7 @@ const initialState = {
     shipmentMemo: ""
 };
 
+//set reducers
 const targetAddress = handleActions(
     {
         [SET_ADDRESS]: (state, {payload: pushed}) =>
