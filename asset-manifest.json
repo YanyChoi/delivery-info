@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "https://yanychoi.github.io/delivery-info/static/css/main.4804a8a4.css",
+    "main.css": "https://yanychoi.github.io/delivery-info/static/css/main.738a4168.css",
     "main.js": "https://yanychoi.github.io/delivery-info/static/js/main.c6396324.js",
     "static/js/787.e6ffcb94.chunk.js": "https://yanychoi.github.io/delivery-info/static/js/787.e6ffcb94.chunk.js",
     "index.html": "https://yanychoi.github.io/delivery-info/index.html",
-    "main.4804a8a4.css.map": "https://yanychoi.github.io/delivery-info/static/css/main.4804a8a4.css.map",
+    "main.738a4168.css.map": "https://yanychoi.github.io/delivery-info/static/css/main.738a4168.css.map",
     "main.c6396324.js.map": "https://yanychoi.github.io/delivery-info/static/js/main.c6396324.js.map",
     "787.e6ffcb94.chunk.js.map": "https://yanychoi.github.io/delivery-info/static/js/787.e6ffcb94.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4804a8a4.css",
+    "static/css/main.738a4168.css",
     "static/js/main.c6396324.js"
   ]
 }
