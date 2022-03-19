@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "https://yanychoi.github.io/jinpen/static/css/main.824984a2.css",
+    "main.js": "https://yanychoi.github.io/jinpen/static/js/main.7b8b2190.js",
+    "static/js/787.e6ffcb94.chunk.js": "https://yanychoi.github.io/jinpen/static/js/787.e6ffcb94.chunk.js",
+    "index.html": "https://yanychoi.github.io/jinpen/index.html",
+    "main.824984a2.css.map": "https://yanychoi.github.io/jinpen/static/css/main.824984a2.css.map",
+    "main.7b8b2190.js.map": "https://yanychoi.github.io/jinpen/static/js/main.7b8b2190.js.map",
+    "787.e6ffcb94.chunk.js.map": "https://yanychoi.github.io/jinpen/static/js/787.e6ffcb94.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.824984a2.css",
+    "static/js/main.7b8b2190.js"
+  ]
+}
