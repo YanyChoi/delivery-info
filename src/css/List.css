@@ -1,7 +1,14 @@
 .list {
     display: block;
     margin: 0 auto;
-    padding-top: 567px;
-    width: 350px;
+    padding-top: 310px;
+    padding-bottom: 137px;
+    width: 95%;
     height: 100%;
+}
+
+@media (min-width: 1000px) {
+    .list {
+        padding-top: 461px;
+    }
 }

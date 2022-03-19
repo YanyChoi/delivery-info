@@ -18,11 +18,11 @@ function Main() {
         <div className="main">
             <div className="header">
                 <Search onInsert={onInsert} onWipe={onWipe} count={count}/>
-                <FullAddress />
                 <Map />
             </div>
             <List />
             <div className="scroll-check" ></div>
+            <div className="footer"><FullAddress /></div>
         </div>
     );
 }

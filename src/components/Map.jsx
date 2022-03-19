@@ -34,7 +34,7 @@ function Map() {
     }, [x, y]);
 
     return (
-        <div className="map" style={{ width: "300px", height: "300px", margin: "0 auto" }}>
+        <div className="map" style={{ width: "90%", height: "185px", margin: "3% auto" }}>
         </div>
     );
 }

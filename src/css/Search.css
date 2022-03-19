@@ -1,9 +1,8 @@
 .search {
     display: block;
     margin: 0 auto;
-    height: 100px;
+    height: 90px;
     width: 100%;
-    padding-top: 30px;
     background-color: #E9DAC1;
 }
 
@@ -17,16 +16,16 @@ form {
 #textbox {
     display: inline-block;
     position: absolute;
-    top: 42px;
+    top: 21px;
     left: 5%;
-    height: 40px;
+    height: 42px;
     width: 70%;
 }
 
 .submit_button {
     display: inline-block;
     position: absolute;
-    top: 40px;
+    top: 20px;
     right: 5%;
     width: 15%;
     height: 50px;
