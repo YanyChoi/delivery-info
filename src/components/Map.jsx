@@ -2,7 +2,6 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import "../css/Map.css";
-import location from "../Reducers/Location";
 
 function Map() {
     const x = useSelector(state => state.location.x);

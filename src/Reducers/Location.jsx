@@ -1,9 +1,9 @@
 import { createAction, handleActions } from 'redux-actions';
 import produce from 'immer';
 
-const SET = 'location/SET';
+const SET_LOCATION = 'location/SET_LOCATION';
 
-export const set = createAction(SET, address => ({
+export const setLocation = createAction(SET_LOCATION, address => ({
     x: address.coordX,
     y: address.coordY
 }));
@@ -11,11 +11,11 @@ export const set = createAction(SET, address => ({
 const initialState = {
     x: 126.570667,
     y: 33.450701
-}
+};
 
 const location = handleActions(
     {
-        [SET]: (state, {payload: location}) =>
+        [SET_LOCATION]: (state, {payload: location}) =>
         produce(state, loc => {
             loc.x = location.x;
             loc.y = location.y;

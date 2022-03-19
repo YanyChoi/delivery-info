@@ -1,12 +1,10 @@
 //shows list of the addresses searched by Search.jsx
 import React, { useEffect } from "react";
 import "../css/List.css";
-import styles from "../css/List.css";
 import ListContainer from './ListContainer';
 import { useSelector, useDispatch } from "react-redux";
 import { useInView } from "react-intersection-observer";
-import { add, subtract } from "../Reducers/Count";
-import Map from "./Map";
+import { add } from "../Reducers/Count";
 
 
 function List() {

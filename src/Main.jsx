@@ -5,6 +5,7 @@ import "./css/Main.css";
 import { useSelector, useDispatch } from "react-redux";
 import { insert, wipe } from "./Reducers/AddressList";
 import Map from "./components/Map";
+import FullAddress from "./components/FullAddress";
 
 function Main() {
 
@@ -15,8 +16,11 @@ function Main() {
 
     return (
         <div className="main">
-            <Search onInsert={onInsert} onWipe={onWipe} count={count}/>
-            <Map />
+            <div className="header">
+                <Search onInsert={onInsert} onWipe={onWipe} count={count}/>
+                <FullAddress />
+                <Map />
+            </div>
             <List />
             <div className="scroll-check" ></div>
         </div>

@@ -1,6 +1,7 @@
 .list {
     display: block;
     margin: 0 auto;
+    padding-top: 567px;
     width: 350px;
     height: 100%;
 }

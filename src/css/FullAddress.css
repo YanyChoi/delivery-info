@@ -1,0 +1,26 @@
+.fulladdress {
+    text-align: center;
+}
+
+.fulladdress p {
+    font-size: 10pt;
+    margin-top: 5px;
+    margin-bottom: 4px;
+}
+
+.textbox {
+    display: inline-block;
+    padding: 3px;
+    margin: 2px;
+    margin-bottom: 5px;
+    height: 20px;
+    line-height: 20px;
+}
+
+#submit_button {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    display: block;
+    height: 30px;
+    width: 70%;
+}
