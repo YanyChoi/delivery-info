@@ -5,7 +5,7 @@ import '../css/Search.css';
 
 function Search({ onInsert, onWipe, count }) {
 
-    const KAKAO_API_KEY = 'de874839e8c063dde99ce3682fa7685c';
+    const KAKAO_API_KEY = 'de874839e8c063dde99ce3682fa7685c'; //REST API Key
     const [address, setAddress] = useState("");
     const [addressList, setAddressList] = useState("");
     
