@@ -22,8 +22,15 @@ function FullAddress() {
 
     useEffect(() => {
         //동기적으로 데이터 송신, 출력 가능
-        if (fullAddress.address !== '없음')
+        if (fullAddress.address !== '없음') {
             console.log(fullAddress);
+            alert(
+            `주소: ${fullAddress.address}
+            건물이름: ${fullAddress.buildingName}
+            상세주소: ${fullAddress.blockNumber}
+            배송시 유의사항: ${fullAddress.shipmentMemo}`
+            )
+        }
     }, [details]);
     
     return (
