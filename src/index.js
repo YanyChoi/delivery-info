@@ -7,13 +7,13 @@ import { Provider } from "react-redux";
 import { createStore } from 'redux';
 import rootReducer from './Reducers/Reducer';
 
-
+// get states at local storage
 const persistedState = localStorage.getItem('reduxState')
-? JSON.parse(localStorage.getItem('reduxState'))
-: {}
+  ? JSON.parse(localStorage.getItem('reduxState'))
+  : {}
 
 const store = createStore(rootReducer, persistedState);
-
+//store states at local storgae
 store.subscribe(() => {
   localStorage.setItem('reduxState', JSON.stringify(store.getState()))
 })
